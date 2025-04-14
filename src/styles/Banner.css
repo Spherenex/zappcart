@@ -1,0 +1,436 @@
+/* Banner.css - Modern, attractive styling for the Banner component */
+
+:root {
+  --primary: #3498db;
+  --primary-dark: #2980b9;
+  --secondary: #2ecc71;
+  --secondary-dark: #27ae60;
+  --accent: #e74c3c;
+  --dark: #34495e;
+  --light: #ecf0f1;
+  --gray: #95a5a6;
+  --gray-light: #e0e0e0;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --radius: 8px;
+  --transition: all 0.3s ease;
+}
+
+/* Main container */
+.banner-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto 3rem;
+  position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Loading state */
+.banner-container.loading {
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light);
+  border-radius: var(--radius);
+}
+
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+.loading-spinner::before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(52, 152, 219, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--primary);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Error state */
+.banner-container.error {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(231, 76, 60, 0.1);
+  border-radius: var(--radius);
+}
+
+.banner-container .error-message {
+  color: var(--accent);
+  font-weight: 600;
+  text-align: center;
+  padding: 1.5rem;
+  max-width: 600px;
+}
+
+/* Main banner */
+.main-banner {
+  height: 600px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+}
+
+/* Dark overlay for better text visibility */
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.2) 100%);
+  z-index: 1;
+}
+
+/* Content section */
+.banner-content {
+  width: 50%;
+  padding: 3rem;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+.banner-subtitle {
+  display: inline-block;
+  background-color: rgba(46, 204, 113, 0.8);
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  transform: translateY(0);
+  opacity: 1;
+  animation: fadeInUp 0.8s ease;
+}
+
+.banner-title {
+  color: #c2afaf;
+  font-size: 3rem;
+  margin: 0 0 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgb(0, 0, 0);
+  animation: fadeInUp 0.8s ease 0.1s both;
+}
+
+.banner-description {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  max-width: 90%;
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+/* Benefits section */
+.banner-benefits {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  animation: fadeInUp 0.8s ease 0.3s both;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.benefit-icon {
+  color: var(--secondary);
+  font-size: 1.2rem;
+}
+
+/* Price and CTA section */
+.banner-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.price-tag {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.discount-badge {
+  background-color: var(--accent);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: inline-block;
+}
+
+.price-values {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.2rem;
+}
+
+.current-price {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* CTA Button */
+.cta-button {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background-color: var(--secondary);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: var(--transition);
+  box-shadow: 0 4px 6px rgba(46, 204, 113, 0.3);
+}
+
+.cta-button:hover {
+  background-color: var(--secondary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(46, 204, 113, 0.4);
+}
+
+.cta-button:active {
+  transform: translateY(-1px);
+}
+
+/* Banner image */
+.banner-image {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 40%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 1s ease;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+  transform: translateY(20px);
+  animation: floatImage 4s ease-in-out infinite;
+}
+
+.product-image.fade-in {
+  opacity: 1;
+}
+
+@keyframes floatImage {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Navigation controls */
+.banner-controls {
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  z-index: 3;
+}
+
+.banner-arrow {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: var(--transition);
+  backdrop-filter: blur(5px);
+}
+
+.banner-arrow:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.banner-indicators {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.banner-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  padding: 0;
+}
+
+.banner-indicator.active {
+  background-color: white;
+  transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-up > * {
+  transform: translateY(20px);
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .main-banner {
+    height: 500px;
+  }
+  
+  .banner-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-banner {
+    flex-direction: column;
+    height: auto;
+    min-height: 700px;
+  }
+  
+  .banner-content {
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .banner-description {
+    max-width: 100%;
+  }
+  
+  .banner-benefits {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .banner-price {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  
+  .banner-image {
+    position: relative;
+    width: 80%;
+    height: 300px;
+    right: auto;
+    top: auto;
+    transform: none;
+    margin-top: 2rem;
+  }
+  
+  .product-image {
+    max-height: 300px;
+  }
+  
+  .banner-controls {
+    bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-title {
+    font-size: 2rem;
+  }
+  
+  .banner-description {
+    font-size: 1rem;
+  }
+  
+  .banner-benefits {
+    gap: 1rem;
+  }
+  
+  .benefit-item {
+    font-size: 0.8rem;
+  }
+  
+  .banner-arrow {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+/* Special Effects */
+/* Smooth transition between slides */
+.main-banner {
+  transition: background-image 0.5s ease;
+}
+
+/* Subtle zoom effect on hover */
+.main-banner:hover {
+  background-size: 105% auto;
+  transition: background-size 5s ease;
+}
+
+/* Glow effect for CTA button */
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 10px rgba(46, 204, 113, 0.6); }
+  50% { box-shadow: 0 0 20px rgba(46, 204, 113, 0.9); }
+}
+
+.cta-button {
+  animation: glow 3s infinite;
+}
