@@ -1,123 +1,118 @@
+
+
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  FaMapMarkerAlt, 
-  FaPhoneAlt, 
-  FaEnvelope, 
-  FaClock,
-  FaFacebookF,
-  FaTwitter,
-  FaInstagram,
-  FaYoutube,
-  FaAngleRight,
-  FaPaperPlane
-} from 'react-icons/fa';
-import '../styles/Footer.css';
-import Logo from '../assets/zapp.jpeg'; // Using the same logo as header
+import '../styles/footer.css';
+import applogo from '../assets/images/logo1.png';
+import { FaArrowLeft, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaWhatsapp, FaLinkedinIn, FaTwitter, FaInstagram, FaPaperPlane } from 'react-icons/fa';
+
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+  
+  // Scroll to top function
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
+  // Handle logo click - navigate to home and scroll to top
+  const handleLogoClick = () => {
+    scrollToTop();
+  };
+
   return (
     <footer className="footer">
       <div className="footer-container">
-        {/* Brand Section */}
-        <div className="footer-brand">
-          <Link to="/" className="footer-logo">
-            <img src={Logo} alt="Fresh Deliver Logo" />
-          </Link>
-          <p className="footer-tagline">
-            Delivering fresh, high-quality chicken products directly to your doorstep with care and convenience.
-          </p>
-          <div className="social-links">
-            <a href="https://facebook.com" className="social-link" aria-label="Facebook">
-              <FaFacebookF />
-            </a>
-            <a href="https://twitter.com" className="social-link" aria-label="Twitter">
-              <FaTwitter />
-            </a>
-            <a href="https://instagram.com" className="social-link" aria-label="Instagram">
-              <FaInstagram />
-            </a>
-            <a href="https://youtube.com" className="social-link" aria-label="YouTube">
-              <FaYoutube />
-            </a>
-          </div>
-        </div>
-
-        {/* Quick Links */}
-        <div className="footer-links">
-          <h3 className="footer-heading">Quick Links</h3>
-          <nav className="footer-nav">
-            <Link to="/shop"><FaAngleRight /> Shop</Link>
-            <Link to="/categories"><FaAngleRight /> Categories</Link>
-            <Link to="/account"><FaAngleRight /> My Account</Link>
-            <Link to="/about"><FaAngleRight /> About Us</Link>
-            <Link to="/privacy"><FaAngleRight /> Privacy Policy</Link>
-            <Link to="/terms"><FaAngleRight /> Terms of Service</Link>
-            <Link to="/faq"><FaAngleRight /> FAQ</Link>
-          </nav>
-        </div>
-
-        {/* Contact Info */}
-        <div className="footer-contact">
-          <h3 className="footer-heading">Contact Us</h3>
-          <div className="contact-info">
-            <div className="contact-item">
-              <FaMapMarkerAlt className="contact-icon" />
-              <div className="contact-text">
-                N/35, 10th Main Rd, LIC Colony, Bangalore, 560021
-              </div>
-            </div>
-            <div className="contact-item">
-              <FaPhoneAlt className="contact-icon" />
-              <div className="contact-text">
-                +91 98765 43210
-              </div>
-            </div>
-            <div className="contact-item">
-              <FaEnvelope className="contact-icon" />
-              <div className="contact-text">
-                support@freshdeliver.com
-              </div>
-            </div>
-            <div className="contact-item">
-              <FaClock className="contact-icon" />
-              <div className="contact-text">
-                Mon - Sat: 9am - 8pm<br />
-                Sunday: 10am - 5pm
-              </div>
+        <div className="footer-grid">
+          <div className="footer-brand">
+            {/* <h2 className="footer-brand-title">ZAPPCART</h2> */}
+            <Link to="/" onClick={handleLogoClick}>
+              <img src={applogo} alt="ZappCart Mobile App" className="footer-brand-title" />
+            </Link>
+            <p className="footer-brand-description">
+              Your trusted partner for premium quality meat delivered fresh to your doorstep.
+            </p>
+            <div className="social-links">
+             <a href="https://x.com/zappcart" target="_blank" rel="noopener noreferrer" className="social-link ">
+                  <FaTwitter />
+                </a>
+                <a href="https://www.linkedin.com/in/zapp-cart-31b9aa365/" target="_blank" rel="noopener noreferrer" className="social-link ">
+                  <FaLinkedinIn />
+                </a>
+                <a href="https://www.instagram.com/_zappcart/" target="_blank" rel="noopener noreferrer" className="social-link">
+                  <FaInstagram />
+                </a>
             </div>
           </div>
+          
+          <div className="footer-links">
+            <h3 className="footer-links-title">Quick Links</h3>
+            <ul className="footer-links-list">
+              <li><Link to="/" onClick={scrollToTop} className="footer-link">Home</Link></li>
+              <li><Link to="/about" className="footer-link">About Us</Link></li>
+              <li><Link to="/products" className="footer-link">Products</Link></li>
+              <li><Link to="/how-it-works" className="footer-link">How It Works</Link></li>
+              
+            </ul>
+          </div>
+          
+          <div className="footer-links">
+            <h3 className="footer-links-title">Categories</h3>
+            <ul className="footer-links-list">
+             
+              <li><Link  className="footer-link">Chicken</Link></li>
+              <li><Link className="footer-link">Mutton</Link></li>
+              <li><Link className="footer-link">Fish & Seafood</Link></li>
+              <li><Link className="footer-link">Prawns</Link></li>
+            </ul>
+          </div>
+          
+          <div className="footer-contact">
+            <h3 className="footer-contact-title">Contact Info</h3>
+            <ul className="footer-contact-list">
+              <li className="footer-contact-item">
+                <svg className="footer-contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <span className="footer-contact-text">
+                Sri kalabhairaveshwara chicken center, <br/>Rajeev Gandhi circle,
+                kebbehala sunkadakatte<br />
+                Bangalore -560091
+                </span>
+              </li>
+              <li className="footer-contact-item">
+                <svg className="footer-contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <a href="tel:+918722237574" className="footer-contact-text">+91 8722237574</a>
+              </li>
+              <li className="footer-contact-item">
+                <svg className="footer-contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 002 2z" />
+                </svg>
+                <a href="mailto:official.tazatabutchers@gmail.com" className="footer-contact-text">official.tazatabutchers@gmail.com</a>
+              </li>
+              
+            </ul>
+          </div>
         </div>
-
-        {/* Newsletter */}
-        <div className="footer-newsletter">
-          <h3 className="footer-heading">Newsletter</h3>
-          <p className="newsletter-text">
-            Subscribe to our newsletter to receive updates, special offers, and recipes.
-          </p>
-          <form className="newsletter-form">
-            <input
-              type="email"
-              placeholder="Your email address"
-              className="newsletter-input"
-              required
-            />
-            <button type="submit" className="newsletter-button">
-              Subscribe <FaPaperPlane />
-            </button>
-          </form>
-        </div>
-      </div>
-
-      {/* Bottom Bar */}
-      <div className="footer-bottom">
-        <p className="footer-copyright">
-          © 2025 Fresh Deliver. All rights reserved.
-        </p>
-        <div className="bottom-links">
-          <Link to="/shipping">Shipping Policy</Link>
-          <Link to="/returns">Returns & Refunds</Link>
-          <Link to="/sitemap">Sitemap</Link>
+        
+        <div className="footer-bottom">
+          <div className="footer-bottom-grid">
+            <p className="footer-copyright">
+              © {currentYear} ZappCart. All rights reserved.
+            </p>
+            <div className="footer-policies">
+              <Link to="/privacy-policy" className="footer-policy-link">Privacy Policy</Link>
+              <Link to="/terms-of-service" className="footer-policy-link">Terms of Service</Link>
+              <Link to="/refund-policy" className="footer-policy-link">Refund Policy</Link>
+              <Link to="/standardPolicy" className="footer-policy-link">Quality & Standards Policy</Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

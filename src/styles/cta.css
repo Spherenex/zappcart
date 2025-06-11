@@ -1,0 +1,229 @@
+.cta-section {
+  padding: 80px 0;
+  background-color: #b5e6a8;
+  color: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.cta-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+}
+
+.cta-left {
+  flex: 1;
+}
+
+.cta-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.cta-subtitle {
+  opacity: 0.9;
+  margin-bottom: 30px;
+  color: #c62828;
+  font-weight: bold;
+}
+
+.app-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.store-badge {
+  height: 48px;
+}
+
+.cta-form-box {
+  background-color: #fff;
+  padding: 32px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  flex: 1;
+}
+
+.form-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #e53935;
+  box-shadow: 0 0 0 2px rgba(229, 57, 53, 0.2);
+}
+
+.submit-btn {
+  width: 100%;
+  background-color: #e53935;
+  color: #fff;
+  font-weight: 600;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #c62828;
+}
+
+/* Target the specific toast container with containerId */
+#zappcart-toast.Toastify__toast-container {
+  padding: 0 !important;
+  margin: 0 auto !important;
+  position: fixed !important;
+  top: auto !important; /* Prevent top positioning */
+  bottom: 30px !important; /* Position at bottom */
+  width: 100% !important;
+  max-width: 400px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 1000 !important;
+}
+
+/* Override all possible Toastify container positions for this containerId */
+#zappcart-toast.Toastify__toast-container--top-center,
+#zappcart-toast.Toastify__toast-container--top-left,
+#zappcart-toast.Toastify__toast-container--top-right,
+#zappcart-toast.Toastify__toast-container--bottom-center,
+#zappcart-toast.Toastify__toast-container--bottom-left,
+#zappcart-toast.Toastify__toast-container--bottom-right {
+  top: auto !important;
+  bottom: 30px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+/* Ensure toast body alignment */
+.Toastify__toast-body {
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Custom styling for the "Coming soon!" toast */
+.android-toast {
+  background-color: #333 !important;
+  color: #fff !important;
+  border-radius: 4px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  padding: 10px 20px !important;
+  margin: 0 auto !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+  position: fixed !important;
+  top: auto !important; /* Prevent top positioning */
+  bottom: 30px !important; /* Position at bottom with slight offset */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: auto !important;
+  max-width: 400px !important;
+  min-width: 200px !important;
+  z-index: 1001 !important; /* Ensure it appears above other content */
+}
+
+/* Override inline styles on toast container (if any) */
+#zappcart-toast.Toastify__toast-container[style*="position"] {
+  top: auto !important;
+  bottom: 30px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+/* Override inline styles on individual toasts (if any) */
+.android-toast[style*="position"] {
+  top: auto !important;
+  bottom: 30px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+/* Style the toast close button (hidden but kept for consistency) */
+.android-toast .Toastify__close-button {
+  color: #fff !important;
+  opacity: 0.8 !important;
+}
+
+.android-toast .Toastify__close-button:hover {
+  opacity: 1 !important;
+}
+
+/* Style the toast progress bar (hidden but kept for consistency) */
+.android-toast .Toastify__progress-bar {
+  background-color: #28a957 !important;
+}
+/* Coming Soon Message Styles */
+.button-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.coming-soon-message {
+  position: absolute;
+  bottom: -40px;
+  background-color: #333;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  animation: fadeInOut 300ms ease-in-out forwards;
+  z-index: 10;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}

@@ -1,0 +1,259 @@
+/* Base styling for the About ZappCart section and card component */
+:root {
+  --primary-color: #ce6464;
+  --secondary-color: #f9f9f9;
+  --accent-color: #e74c3c;
+  --text-color: #333;
+  --light-text: #777;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* About Section Styles */
+.about-section {
+  padding: 5rem 0;
+  background-color: #f9f9f9;
+  background-image: 
+    linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(245,245,245,0.8) 100%),
+    url('/api/placeholder/1920/1080'); 
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title:after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--primary-color);
+  margin: 0.5rem auto 0;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.promise-title {
+  font-size: 1.8rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.description {
+  line-height: 1.7;
+  color: var(--light-text);
+  margin-bottom: 2rem;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.icon {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.feature-title {
+  font-size: 1.1rem;
+  margin: 0 0 0.3rem 0;
+  color: var(--text-color);
+}
+
+.feature-text p {
+  margin: 0;
+  color: var(--light-text);
+  line-height: 1.5;
+}
+
+/* ZappCart Card Styles */
+.zappcart-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.zappcart-card {
+  width: 100%;
+  background: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.zappcart-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.card-tag {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+.card-content h3 {
+  margin: 0 0 12px 0;
+  color: var(--text-color);
+  font-size: 1.4rem;
+}
+
+.card-content p {
+  margin: 0 0 18px 0;
+  color: var(--light-text);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.card-features {
+  margin-bottom: 20px;
+}
+
+.card-features .feature {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.feature-icon {
+  color: var(--primary-color);
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.price-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: var(--light-text);
+  font-size: 0.9rem;
+}
+
+.current-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.add-to-cart-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #219653;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .zappcart-container {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .promise-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .feature-item {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

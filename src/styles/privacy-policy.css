@@ -1,0 +1,216 @@
+/* Base styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+  }
+  
+  /* Container Layout */
+  .privacy-policy-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Add proper header spacing to prevent overlap */
+  .main-content {
+    flex: 1;
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 80px; /* Add space for the fixed header */
+  }
+  
+  .policy-container {
+    max-width: 900px;
+    width: 90%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Policy Header */
+  .policy-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eaeaea;
+  }
+  
+  .logo-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #2f8142; /* Updated to match the blue Z icon */
+    border-radius: 10%;
+    margin-right: 1.5rem;
+    position: relative;
+  }
+  
+  .logo-icon::before {
+    content: "Z";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .policy-header h1 {
+    font-size: 2rem;
+    color: #3a7d3c;
+    font-weight: 600;
+  }
+  
+  /* Style for Header component */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    padding: 0.75rem 2rem;
+  }
+  
+  header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header .logo img {
+    height: 40px;
+  }
+  
+  header .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  header .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  header .download-btn {
+    background-color: #ff5252;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  /* Policy Sections */
+  .policy-section {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .policy-section h2 {
+    color: #d45555;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  /* Add ZappCart brand colors */
+  .policy-header {
+    border-bottom-color: #37b26c; /* Green from ZappCart logo */
+  }
+  
+  .policy-section p {
+    margin-bottom: 1rem;
+  }
+  
+  .policy-section ul {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .policy-section li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Policy Date */
+  .policy-date {
+    margin-top: 2rem;
+    text-align: right;
+    font-style: italic;
+    color: #777;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .policy-container {
+      width: 95%;
+      padding: 1.5rem;
+    }
+    
+    .policy-header {
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: center;
+    }
+    
+    .logo-icon {
+      margin-bottom: 1rem;
+      margin-right: 0;
+    }
+    
+    .policy-header h1 {
+      font-size: 1.75rem;
+    }
+    
+    .policy-section h2 {
+      font-size: 1.3rem;
+    }
+  }
+  
+  /* Print styles */
+  @media print {
+    .policy-container {
+      box-shadow: none;
+      width: 100%;
+      max-width: none;
+    }
+    
+    body {
+      background-color: white;
+    }
+    
+    .policy-header, .policy-section {
+      page-break-inside: avoid;
+    }
+  }
+
+  /* Ensure smooth scrolling behavior for the entire page */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Style for links in the policy sections */
+  .policy-section a {
+    color: #37b26c; /* Match ZappCart brand color */
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .policy-section a:hover {
+    color: #2f8142; /* Slightly darker shade for hover */
+  }

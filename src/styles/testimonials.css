@@ -1,0 +1,254 @@
+/* testimonials.css */
+
+/* Base styles */
+.testimonials-section {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Testimonials header */
+.testimonials-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.testimonials-title {
+  font-size: 2.5rem;
+  color: #222;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.testimonials-description {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Testimonials grid */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+/* Individual testimonial cards */
+.testimonial-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Testimonial header with avatar and author info */
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.testimonial-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 15px;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #555;
+  font-weight: bold;
+}
+
+.testimonial-author h4 {
+  font-size: 1.1rem;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.testimonial-author p {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Star rating */
+.testimonial-rating {
+  color: #ff6b6b;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  display: flex;
+}
+
+.testimonial-rating svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 2px;
+}
+
+/* Testimonial content */
+.testimonial-text {
+  color: #555;
+  font-style: italic;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.testimonial-date {
+  font-size: 0.85rem;
+  color: #999;
+  text-align: right;
+}
+
+/* Read more button */
+.testimonial-more {
+  text-align: center;
+}
+
+.btn-more {
+  display: inline-flex;
+  align-items: center;
+  background-color: transparent;
+  color: #ff6b6b;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: 2px solid #ff6b6b;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-more:hover {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+.btn-more span {
+  margin-right: 10px;
+}
+
+.arrow-icon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.btn-more:hover .arrow-icon {
+  transform: translateX(5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .testimonials-title {
+    font-size: 2rem;
+  }
+}
+
+/* Target the specific toast container with containerId */
+#zappcart-toast.Toastify__toast-container {
+    padding: 0 !important;
+    margin: 0 auto !important;
+    position: fixed !important;
+    top: auto !important; /* Prevent top positioning */
+    bottom: 30px !important; /* Position at bottom */
+    width: 100% !important;
+    max-width: 400px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 1000 !important;
+}
+
+/* Override all possible Toastify container positions for this containerId */
+#zappcart-toast.Toastify__toast-container--top-center,
+#zappcart-toast.Toastify__toast-container--top-left,
+#zappcart-toast.Toastify__toast-container--top-right,
+#zappcart-toast.Toastify__toast-container--bottom-center,
+#zappcart-toast.Toastify__toast-container--bottom-left,
+#zappcart-toast.Toastify__toast-container--bottom-right {
+    top: auto !important;
+    bottom: 30px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+}
+
+/* Ensure toast body alignment */
+.Toastify__toast-body {
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Custom styling for the "Coming soon!" toast */
+.android-toast {
+    background-color: #333 !important;
+    color: #fff !important;
+    border-radius: 4px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    padding: 10px 20px !important;
+    margin: 0 auto !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+    position: fixed !important;
+    top: auto !important; /* Prevent top positioning */
+    bottom: 30px !important; /* Position at bottom with slight offset */
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: auto !important;
+    max-width: 400px !important;
+    min-width: 200px !important;
+    z-index: 1001 !important; /* Ensure it appears above other content */
+}
+
+/* Override inline styles on toast container (if any) */
+#zappcart-toast.Toastify__toast-container[style*="position"] {
+    top: auto !important;
+    bottom: 30px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+}
+
+/* Override inline styles on individual toasts (if any) */
+.android-toast[style*="position"] {
+    top: auto !important;
+    bottom: 30px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+}
+
+/* Style the toast close button (hidden but kept for consistency) */
+.android-toast .Toastify__close-button {
+    color: #fff !important;
+    opacity: 0.8 !important;
+}
+
+.android-toast .Toastify__close-button:hover {
+    opacity: 1 !important;
+}
+
+/* Style the toast progress bar (hidden but kept for consistency) */
+.android-toast .Toastify__progress-bar {
+    background-color: #28a957 !important;
+}
