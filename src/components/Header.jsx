@@ -199,7 +199,7 @@ const Header = () => {
         <div className="header-container">
           <div className="logo">
             <button 
-              onClick={handleLogoClick}
+              // onClick={handleLogoClick}
               className="logo-button"
               style={{ 
                 background: 'none', 
@@ -218,14 +218,7 @@ const Header = () => {
             <a href="#about" onClick={(e) => { e.preventDefault(); window.location.href = '/#about'; }}>About</a>
             <a href="#products" onClick={(e) => { e.preventDefault(); window.location.href = '/#products'; }}>Products</a>
             <a href="#how-it-works" onClick={(e) => { e.preventDefault(); window.location.href = '/#how-it-works'; }}>How It Works</a>
-            <Link
-              to="/download"
-              href="#contact"
-              className="download-btn"
-              onClick={handleDownloadClick}
-            >
-              Download App
-            </Link>
+            
           </nav>
 
           {/* Mobile Menu Button */}
@@ -248,14 +241,7 @@ const Header = () => {
             <a href="#about" onClick={(e) => { e.preventDefault(); window.location.href = '/#about'; }}>About</a>
             <a href="#products" onClick={(e) => { e.preventDefault(); window.location.href = '/#products'; }}>Products</a>
             <a href="#how-it-works" onClick={(e) => { e.preventDefault(); window.location.href = '/#how-it-works'; }}>How It Works</a>
-            <Link
-              to="/download"
-              href="#contact"
-              className="download-btn"
-              onClick={handleDownloadClick}
-            >
-              Download App
-            </Link>
+            
           </nav>
         )}
       </header>

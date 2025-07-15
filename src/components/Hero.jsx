@@ -55,18 +55,13 @@ const Hero = () => {
           </p>
           <div className="hero-buttons">
             <div className="button-wrapper">
-              <button 
+              {/* <button 
                 className="hero-button hero-button-primary" 
                 onClick={handleOrderNowClick}
                 aria-label="Order Now"
               >
                 Order Now
-              </button>
-              {showComingSoon && (
-                <div className="coming-soon-message">
-                  🚀 Coming Soon!
-                </div>
-              )}
+              </button> */}
             </div>
             <button 
               className="hero-button hero-button-secondary" 

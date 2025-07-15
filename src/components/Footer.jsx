@@ -9,7 +9,7 @@ import { FaArrowLeft, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaWhatsapp, FaLink
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
+
   // Scroll to top function
   const scrollToTop = () => {
     window.scrollTo({
@@ -36,40 +36,40 @@ const Footer = () => {
               Your trusted partner for premium quality meat delivered fresh to your doorstep.
             </p>
             <div className="social-links">
-             <a href="https://x.com/zappcart" target="_blank" rel="noopener noreferrer" className="social-link ">
-                  <FaTwitter />
-                </a>
-                <a href="https://www.linkedin.com/in/zapp-cart-31b9aa365/" target="_blank" rel="noopener noreferrer" className="social-link ">
-                  <FaLinkedinIn />
-                </a>
-                <a href="https://www.instagram.com/_zappcart/" target="_blank" rel="noopener noreferrer" className="social-link">
-                  <FaInstagram />
-                </a>
+              <a href="https://x.com/zappcart" target="_blank" rel="noopener noreferrer" className="social-link ">
+                <FaTwitter />
+              </a>
+              <a href="https://www.linkedin.com/in/zapp-cart-31b9aa365/" target="_blank" rel="noopener noreferrer" className="social-link ">
+                <FaLinkedinIn />
+              </a>
+              <a href="https://www.instagram.com/_zappcart/" target="_blank" rel="noopener noreferrer" className="social-link">
+                <FaInstagram />
+              </a>
             </div>
           </div>
-          
+
           <div className="footer-links">
             <h3 className="footer-links-title">Quick Links</h3>
             <ul className="footer-links-list">
-              <li><Link to="/" onClick={scrollToTop} className="footer-link">Home</Link></li>
-              <li><Link to="/about" className="footer-link">About Us</Link></li>
-              <li><Link to="/products" className="footer-link">Products</Link></li>
-              <li><Link to="/how-it-works" className="footer-link">How It Works</Link></li>
-              
+              <Link to="/" onClick={scrollToTop} className="footer-link">Home</Link>
+              <Link to="/about" className="footer-link">About Us</Link>
+              <Link to="/products" className="footer-link">Products</Link>
+              <Link to="/how-it-works" className="footer-link">How It Works</Link>
+
             </ul>
           </div>
-          
+
           <div className="footer-links">
             <h3 className="footer-links-title">Categories</h3>
             <ul className="footer-links-list">
-             
-              <li><Link  className="footer-link">Chicken</Link></li>
-              <li><Link className="footer-link">Mutton</Link></li>
-              <li><Link className="footer-link">Fish & Seafood</Link></li>
-              <li><Link className="footer-link">Prawns</Link></li>
+
+              <Link className="footer-link">Chicken</Link>
+              <Link className="footer-link">Mutton</Link>
+              <Link className="footer-link">Fish & Seafood</Link>
+              <Link className="footer-link">Prawns</Link>
             </ul>
           </div>
-          
+
           <div className="footer-contact">
             <h3 className="footer-contact-title">Contact Info</h3>
             <ul className="footer-contact-list">
@@ -79,9 +79,15 @@ const Footer = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
                 <span className="footer-contact-text">
-                Sri kalabhairaveshwara chicken center, <br/>Rajeev Gandhi circle,
-                kebbehala sunkadakatte<br />
-                Bangalore -560091
+               
+                    TAZATA BUTCHERS PRIVATE LIMITED
+                    <br />
+                    #349, Ground Floor, Rajeev Gandhi Circle,
+                    <br />
+                    Kebbehala, Sunkadakatte, Herohalli,
+                    <br />
+                    Bangalore Urban, Karnataka-560091
+                
                 </span>
               </li>
               <li className="footer-contact-item">
@@ -96,11 +102,11 @@ const Footer = () => {
                 </svg>
                 <a href="mailto:official.tazatabutchers@gmail.com" className="footer-contact-text">official.tazatabutchers@gmail.com</a>
               </li>
-              
+
             </ul>
           </div>
         </div>
-        
+
         <div className="footer-bottom">
           <div className="footer-bottom-grid">
             <p className="footer-copyright">
